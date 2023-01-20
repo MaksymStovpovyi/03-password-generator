@@ -6,13 +6,14 @@ function writePassword() {
     let arrabc = ['a','b','c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     let arrABC = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     let arr123 = ['0', '1', '2', '3', '4', '5', '6','7', '8', '9'];
-    let arrSch = ['!', '@', '#', '$', '%', '^', '&', '*', '-', '_', '?', '+', '=', '|', ':', ';', '<', '>', ',', '.', '"', "'"];
-
+    let arrSch = ['!', '@', '#', '$', '%', '^', '&', '*', '-', '_', '?', '+', '=', '|', ':', ';', '<', '>', ',', '.'];
     let symbForPass = [];
+    let numSteps;
+    let newPass = '';
+    
 
     // 8 - 128  STEPS Generator
     let maxAndMin = confirm('\n\The password will contain at least 8 characters and a maximum of 128 characters!\n\OK?\n\Or press CANCEL, when the password is only 8 characters');
-    let numSteps;
 
     if (maxAndMin) {
         numSteps = 8 + Math.floor(Math.random() * (128 + 1 - 8));
@@ -50,9 +51,9 @@ function writePassword() {
         writePassword();
     }
 
-    //Generator
-    let newPass = '';
+    alert('Сongratulations!\n\Your password is ready');
 
+    //Generator
     for (let i = 0; i < numSteps; i++) {
         let arrIndex1 = Math.floor(Math.random() * symbForPass.length);
         let arrIndex2 = Math.floor(Math.random() * symbForPass[arrIndex1].length);
@@ -60,7 +61,6 @@ function writePassword() {
     }
 
     // add to page
-    
     let myPass = document.querySelector('#password');
     myPass.textContent = newPass;
 }
