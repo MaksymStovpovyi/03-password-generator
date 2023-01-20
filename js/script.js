@@ -55,16 +55,14 @@ function writePassword() {
 
     for (let i = 0; i < numSteps; i++) {
         let arrIndex1 = Math.floor(Math.random() * symbForPass.length);
-        console.log(arrIndex1);
         let arrIndex2 = Math.floor(Math.random() * symbForPass[arrIndex1].length);
-        console.log(arrIndex2);
         newPass = newPass + symbForPass[arrIndex1][arrIndex2];
-        }
+    }
 
     // add to page
+    
     let myPass = document.querySelector('#password');
     myPass.textContent = newPass;
-    document.myPass.appChild(myPass);
 }
 
 generateBtn.addEventListener("click", writePassword);
