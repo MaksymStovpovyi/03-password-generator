@@ -13,10 +13,10 @@ function writePassword() {
     
 
     // 8 - 128  STEPS Generator
-    let maxAndMin = confirm('\n\The password will contain at least 8 characters and a maximum of 128 characters!\n\OK?\n\Or press CANCEL, when the password is only 8 characters');
+    let maxAndMin = prompt('\n\ Enter the number of characters for the password from 8 to 128.\n\ Or press CANCEL, when the password is only 8 characters');
 
     if (maxAndMin) {
-        numSteps = 8 + Math.floor(Math.random() * (128 + 1 - 8));
+        numSteps = maxAndMin;
     } else {
         numSteps = 8;
     }
